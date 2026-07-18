@@ -1,0 +1,44 @@
+<h2>Server Stats &amp; Visitor Locations</h2>
+<p class="subtitle">How should we track this?</p>
+
+<div class="section">
+  <h3>Server Stats (Storage + RAM)</h3>
+  <p>Simplest approach: a cron job on your server runs every minute and writes disk/memory usage to a JSON file. The PWA fetches it and shows a simple gauge or bar.</p>
+  <div style="background:var(--bg);border:2px dashed var(--border);border-radius:12px;padding:16px;margin-top:8px">
+    <div style="font-weight:600;font-size:14px;margin-bottom:8px">Example display:</div>
+    <div style="display:flex;gap:12px">
+      <div style="flex:1;padding:10px;background:var(--surface);border-radius:8px">
+        <div style="font-size:12px;color:var(--muted)">Storage</div>
+        <div style="font-size:16px;font-weight:700">342 GB / 500 GB</div>
+        <div style="height:6px;background:#e0e0e0;border-radius:3px;margin-top:6px"><div style="height:6px;width:68%;background:#e65100;border-radius:3px"></div></div>
+      </div>
+      <div style="flex:1;padding:10px;background:var(--surface);border-radius:8px">
+        <div style="font-size:12px;color:var(--muted)">RAM</div>
+        <div style="font-size:16px;font-weight:700">3.2 GB / 8 GB</div>
+        <div style="height:6px;background:#e0e0e0;border-radius:3px;margin-top:6px"><div style="height:6px;width:40%;background:#2e7d32;border-radius:3px"></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>Visitor Locations</h3>
+  <p>Two ways to get this:</p>
+  
+  <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px">
+    <div class="option" data-choice="ip" onclick="toggleSelect(this)" style="padding:12px;border:1px solid var(--border);border-radius:8px">
+      <div class="content">
+        <h4 style="margin:0">A. Free IP geolocation API</h4>
+        <p style="margin:4px 0 0 0;font-size:13px;color:var(--muted)">When someone visits the page, JS calls ip-api.com (free, no key) to get their city/country from their IP. Result is sent to a small logging endpoint on your server. Shows a list like "Dubai, AE • Paris, FR"</p>
+      </div>
+    </div>
+    <div class="option" data-choice="cloudflare" onclick="toggleSelect(this)" style="padding:12px;border:1px solid var(--border);border-radius:8px">
+      <div class="content">
+        <h4 style="margin:0">B. Cloudflare Analytics</h4>
+        <p style="margin:4px 0 0 0;font-size:13px;color:var(--muted)">If your server is behind Cloudflare, pull location data from their analytics API. Less setup but requires Cloudflare.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p style="margin-top:16px;font-size:13px;color:var(--muted)">Click A or B to pick your preferred approach for location tracking.</p>

@@ -1,0 +1,33 @@
+<h2>Tool cards: show descriptions?</h2>
+<p class="subtitle">Your family may not know what "n8n" or "SearXNG" are</p>
+
+<div class="cards">
+  <div class="card" data-choice="with-desc" onclick="toggleSelect(this)">
+    <div class="card-body">
+      <h3>Icons + Names + Descriptions</h3>
+      <p>Each card shows an icon, the tool name, and a one-line description. Helpful for non-technical family members.</p>
+      <div style="margin-top:12px;background:var(--bg);border:2px dashed var(--border);border-radius:12px;padding:16px">
+        <div style="display:flex;align-items:center;gap:12px">
+          <div style="width:40px;height:40px;background:#f5e6d3;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px">📝</div>
+          <div>
+            <div style="font-weight:600;font-size:14px">Excalidraw</div>
+            <div style="font-size:12px;color:var(--muted)">Whiteboard &amp; diagrams</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-choice="minimal-desc" onclick="toggleSelect(this)">
+    <div class="card-body">
+      <h3>Icons + Names Only</h3>
+      <p>Just icon + tool name. Cleaner, less text, but assumes they know what each tool does.</p>
+      <div style="margin-top:12px;background:var(--bg);border:2px dashed var(--border);border-radius:12px;padding:16px">
+        <div style="display:flex;align-items:center;gap:12px">
+          <div style="width:40px;height:40px;background:#f5e6d3;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px">📝</div>
+          <div style="font-weight:600;font-size:14px">Excalidraw</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

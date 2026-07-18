@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#5d4037">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="apple-touch-icon" href="/icons/icon-192.png">
+  <title>Bitar Family</title>
+  <script type="module" crossorigin src="/assets/index-W-QG-5Pu.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-B0l6aFhK.css">
+<link rel="manifest" href="/manifest.webmanifest"></head>
+<body>
+  <div id="app">
+    <header class="top-bar">
+      <span class="top-bar__brand">✦ Bitar Family</span>
+    </header>
+
+    <main class="content">
+      <section id="tools" class="section">
+        <div class="grid" id="tool-grid"></div>
+      </section>
+
+      <section id="wireguard" class="section">
+        <div class="card card--wireguard">
+          <div class="card__icon">🌐</div>
+          <div class="card__body">
+            <h2 class="card__title">Secure Connection</h2>
+            <p class="card__desc">Install WireGuard on your phone and scan the QR code from Omar to access all family tools securely.</p>
+            <a class="btn" href="https://play.google.com/store/apps/details?id=com.wireguard.android" target="_blank" rel="noopener">
+              ▶ Google Play
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="stats" class="section">
+        <h2 class="section__title">Server Status</h2>
+        <div class="gauges" id="stats-gauges">
+          <div class="gauge">
+            <div class="gauge__label">Storage</div>
+            <div class="gauge__value" id="storage-value">—</div>
+            <div class="gauge__bar"><div class="gauge__fill" id="storage-fill" style="width:0%"></div></div>
+          </div>
+          <div class="gauge">
+            <div class="gauge__label">RAM</div>
+            <div class="gauge__value" id="ram-value">—</div>
+            <div class="gauge__bar"><div class="gauge__fill" id="ram-fill" style="width:0%"></div></div>
+          </div>
+        </div>
+        <p class="stats__error" id="stats-error"></p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      Built with ❤️ for the Bitar family
+    </footer>
+  </div>
+
+</body>
+</html>

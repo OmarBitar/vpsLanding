@@ -1,0 +1,40 @@
+<h2>How should the buttons be laid out?</h2>
+<p class="subtitle">You have 6 tools — how do you want them arranged on the home screen?</p>
+
+<div class="cards">
+  <div class="card" data-choice="grid" onclick="toggleSelect(this)">
+    <div class="card-body">
+      <h3>Grid of Cards</h3>
+      <p>2-column grid with icon + label on each card. Clean, tiled look — familiar like phone home screen icons.</p>
+      <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
+        <span style="background:#e8eaf6;color:#283593;padding:4px 12px;border-radius:999px;font-size:12px">2 columns</span>
+        <span style="background:#fff9c4;color:#f57f17;padding:4px 12px;border-radius:999px;font-size:12px">icon + label</span>
+        <span style="background:#e0f2f1;color:#00695c;padding:4px 12px;border-radius:999px;font-size:12px">app-like</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-choice="list" onclick="toggleSelect(this)">
+    <div class="card-body">
+      <h3>List View</h3>
+      <p>Full-width rows with icon on left, name + description on right. More information-dense.</p>
+      <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
+        <span style="background:#e3f2fd;color:#1565c0;padding:4px 12px;border-radius:999px;font-size:12px">descriptive</span>
+        <span style="background:#f3e5f5;color:#7b1fa2;padding:4px 12px;border-radius:999px;font-size:12px">dense</span>
+        <span style="background:#e8f5e9;color:#2e7d32;padding:4px 12px;border-radius:999px;font-size:12px">scrollable</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-choice="big" onclick="toggleSelect(this)">
+    <div class="card-body">
+      <h3>Big Buttons</h3>
+      <p>Large, chunky buttons — one per row. Super easy to tap, especially on mobile. Less info visible at once.</p>
+      <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
+        <span style="background:#fce4ec;color:#c62828;padding:4px 12px;border-radius:999px;font-size:12px">easy to tap</span>
+        <span style="background:#fff3e0;color:#e65100;padding:4px 12px;border-radius:999px;font-size:12px">minimalist</span>
+        <span style="background:#f3e5f5;color:#7b1fa2;padding:4px 12px;border-radius:999px;font-size:12px">scroll</span>
+      </div>
+    </div>
+  </div>
+</div>
