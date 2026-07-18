@@ -6,7 +6,7 @@ RUN npm ci
 COPY . .
 RUN npm run build
 
-FROM node:22-alpine/var/folders/yy/vw8n8w493pg8fx_6r0_kvxg40000gn/T/TemporaryItems/NSIRD_screencaptureui_sGJ677/Screenshot\ 2026-07-18\ at\ 12.12.52 PM.png
+FROM node:22-alpine
 RUN apk add --no-cache ca-certificates && \
     addgroup -S app && adduser -S app -G app
 WORKDIR /app
