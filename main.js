@@ -116,5 +116,26 @@ async function fetchStats() {
   }
 }
 
+function openWireGuard() {
+  const a = document.createElement('a')
+  a.rel = 'noopener noreferrer'
+  a.target = '_blank'
+
+  if (/Android/i.test(navigator.userAgent)) {
+    a.href = 'intent://#Intent;scheme=wireguard;package=com.wireguard.android;S.browser_fallback_url=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.wireguard.android;end'
+  } else {
+    a.href = 'https://play.google.com/store/apps/details?id=com.wireguard.android'
+  }
+
+  a.click()
+}
+
+document.getElementById('wireguard-btn').addEventListener('click', e => {
+  e.preventDefault()
+  openWireGuard()
+})
+
+window.openLink = openLink
+
 renderTools()
 fetchStats()
