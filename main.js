@@ -22,7 +22,8 @@ const tools = [
     name: 'Nextcloud',
     desc: 'File storage & sharing',
     url: 'https://nextcloud.apps.albitar.homes/',
-    badge: { icon: '▷▷▷', label: 'Drive', color: '#4285f4' }
+    badge: { icon: '▷▷▷', label: 'Drive', color: '#4285f4' },
+    app: { android: 'com.nextcloud.client' }
   },
   {
     icon: '🧰',
@@ -47,10 +48,26 @@ const tools = [
   }
 ]
 
+function openLink(i) {
+  const t = tools[i]
+  const a = document.createElement('a')
+  a.rel = 'noopener noreferrer'
+  a.target = '_blank'
+
+  if (t.app?.android && /Android/i.test(navigator.userAgent)) {
+    const u = new URL(t.url)
+    a.href = `intent://${u.host}${u.pathname}#Intent;scheme=https;package=${t.app.android};end`
+  } else {
+    a.href = t.url
+  }
+
+  a.click()
+}
+
 function renderTools() {
   const grid = document.getElementById('tool-grid')
-  grid.innerHTML = tools.map(t => `
-    <div class="card" onclick="window.open('${t.url}', '_blank', 'noopener,noreferrer')" role="button" tabindex="0">
+  grid.innerHTML = tools.map((t, i) => `
+    <div class="card" onclick="openLink(${i})" role="button" tabindex="0">
       <div class="card__icon">${t.icon}</div>
       <div class="card__body">
         <div class="card__title">${t.name}</div>
